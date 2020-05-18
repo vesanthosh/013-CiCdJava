@@ -1,0 +1,24 @@
+language: java
+# use Java 8
+jdk:
+- openjdk8
+
+# see https://blog.travis-ci.com/2014-12-17-faster-builds-with-container-based-infrastructure
+sudo: false
+
+# cache the build tool's caches
+cache:
+  directories:
+  - $HOME/.m2
+
+branches:
+    only:
+    - master
+
+deploy:
+    provider: cloudfoundry
+    api: $CF_API
+    username: $CF_USER
+    password: $CF_PASS
+    organization: $CF_ORG
+    space: $CF_ENV

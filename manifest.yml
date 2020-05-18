@@ -1,0 +1,9 @@
+---
+applications:
+- instances: 1
+  name: 013-citravis-java-b6
+  memory: 666M
+  path: target/CiTravis-1.0-SNAPSHOT.jar
+  disk_quota: 256M
+  env:
+    spring.profiles.active: cloud
